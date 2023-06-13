@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package api;
+
+message Book {
+  int64 id = 1;
+  string title = 2;
+  int64 author_id = 3;
+  Author author = 4;
+}
+
+message Author {
+  int64 id = 1;
+  string name = 2;
+}
+
+message GetBooksRequest {}
+
+message GetBooksResponse {
+  repeated Book books = 1;
+}
+
+message GetAuthorsRequest {}
+
+message GetAuthorsResponse {
+  repeated Author authors = 1;
+}
+
+service BookService {
+  rpc GetBooks(GetBooksRequest) returns (GetBooksResponse) {}
+  rpc GetAuthors(GetAuthorsRequest) returns (GetAuthorsResponse) {}
+}
