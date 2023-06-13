@@ -9,12 +9,15 @@
        git clone https://github.com/vshumeyko92/book-service.git
 
 2. Перейдите в директорию проекта:
+
        cd book-service   
   
 3. Соберите проект с помощью команды 'make':
+
        make build
     
 4. Запустите приложение:
+
        make run
 
 ## Использование
