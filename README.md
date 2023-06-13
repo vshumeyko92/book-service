@@ -8,12 +8,14 @@
 
    ```shell
    git clone https://github.com/vshumeyko92/book-service.git
- 
-   Соберите проект с помощью команды make:
+
+Перейдите в директорию проекта:
    cd book-service
-   Соберите проект с помощью команды make:
+   
+Соберите проект с помощью команды make:
    make build
-   Запустите приложение:
+   
+Запустите приложение:
    make run
 
 ## Использование
@@ -26,16 +28,18 @@ GetAuthors: получение списка авторов
 Пример использования GRPC-клиента на Go:
 
 
-package main
+     package main
 
-import (
+     import (
+
 	"context"
 	"log"
 	"github.com/vshumeyko92/book-service/api"
 	"google.golang.org/grpc"
-)
+     )
 
-func main() {
+     func main() {
+
 	// Подключение к серверу GRPC
 	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
 	if err != nil {
@@ -64,7 +68,7 @@ func main() {
 	for _, author := range authorsResp.Authors {
 		log.Printf("Author ID: %d, Name: %s", author.Id, author.Name)
 	}
-}
+    }
 
 
 ## Тестирование
